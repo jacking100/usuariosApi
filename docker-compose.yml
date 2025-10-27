@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres_usuariosapi
+    environment:
+      POSTGRES_DB: bd_usuariosApi
+      POSTGRES_USER: coti_user
+      POSTGRES_PASSWORD: coti_password
+    ports:
+      - "5435:5432"
+    networks:
+      - usuariosApi_network
+networks:
+  usuariosApi_network:
+    driver: bridge
