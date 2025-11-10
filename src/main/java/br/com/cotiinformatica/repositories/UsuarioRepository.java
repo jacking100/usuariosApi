@@ -20,6 +20,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario, UUID> {
 
     @Query("""
                 SELECT u FROM Usuario u
+                JOIN u.perfil p
                 WHERE u.email = :email
                   AND u.senha = :senha  
             """)
